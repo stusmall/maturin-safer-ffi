@@ -1,0 +1,14 @@
+[package]
+name = "centralcrate"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "centralcrate"
+
+[dependencies]
+safer-ffi = { version = "0.0.6", features = ["proc_macros"] }
+
+[features]
+c-headers = ["safer-ffi/headers"]
+sdk-test-stub = []

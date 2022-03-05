@@ -1,0 +1,20 @@
+[workspace]
+
+members = [
+    "pythonsdk",
+    "centralcrate",
+    "xtask"
+]
+
+
+
+[profile.dev]
+# I don't understand for the life of my *why* this work but it does.  This is
+# done so we can reexport symbols on the dev builds of the pythonsdk sdk.  It came form here:
+# https://github.com/rust-lang/rfcs/issues/2771#issuecomment-481630590
+lto = true
+incremental = false
+
+[profile.release]
+lto = true
+codegen-units = 1
